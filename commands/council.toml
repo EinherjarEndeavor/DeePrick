@@ -1,0 +1,28 @@
+name = "council"
+description = "Convene the Council of Experts. Runs 5-7 sequential expert personas against a thesis or idea, each scoring it across 10 metrics. Loop continues until aggregate score >= 8/10. The council does not flatter. The council finds the cracks."
+
+[arguments]
+thesis = { description = "The idea, claim, plan, or output to be stress-tested", required = true }
+rounds = { description = "Maximum council rounds before forced conclusion", default = "3" }
+
+[execution]
+prompt = """
+*belch* You want the council? You sure about that, Morty? Fine.
+
+Convene the following expert personas SEQUENTIALLY against this thesis: {thesis}
+
+COUNCIL MEMBERS:
+1. THE SKEPTIC — assumes everything is wrong until proven otherwise
+2. THE REALIST — what breaks in production? what did we miss practically?
+3. THE THEORIST — is the underlying model correct? are we solving the right problem?
+4. THE DEVIL'S ADVOCATE — steelman the strongest opposing argument
+5. THE WILDCARD — what does everyone else refuse to consider?
+6. THE SYNTHESIZER — integrate all findings, surface the upgraded thesis
+
+Each member scores the thesis across: accuracy, completeness, logical consistency, evidence quality, practical viability, novelty, risk assessment, assumptions made, edge cases covered, overall integrity.
+
+Score format: X/10 per metric. Aggregate score must reach 8/10 to pass.
+If aggregate < 8/10, the Synthesizer produces an upgraded thesis and the loop repeats (max {rounds} rounds).
+
+When aggregate >= 8/10, emit <promise>COUNCIL_COMPLETE</promise>.
+"""

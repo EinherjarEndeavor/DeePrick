@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "rubric": {
+    "coverage": {
+      "weight": 20,
+      "description": "All major facets of the research question addressed",
+      "threshold": 16
+    },
+    "sourcing": {
+      "weight": 20,
+      "description": "Every claim has a verifiable, non-circular source",
+      "threshold": 16
+    },
+    "depth": {
+      "weight": 15,
+      "description": "Mechanisms explained, not just conclusions stated",
+      "threshold": 12
+    },
+    "breadth": {
+      "weight": 15,
+      "description": "Multiple perspectives and edge cases covered",
+      "threshold": 12
+    },
+    "contradiction_handling": {
+      "weight": 10,
+      "description": "Contested claims flagged with evidence on both sides",
+      "threshold": 7
+    },
+    "completeness": {
+      "weight": 10,
+      "description": "No truncation, no ellipsis, no 'and more' cop-outs",
+      "threshold": 9
+    },
+    "synthesis_quality": {
+      "weight": 10,
+      "description": "Evidence integrated into coherent conclusions, not just listed",
+      "threshold": 7
+    }
+  },
+  "pass_threshold": 80,
+  "fail_behavior": "re_inject_mission_and_loop",
+  "pass_behavior": "emit_VALIDATION_PASSED_token"
+}

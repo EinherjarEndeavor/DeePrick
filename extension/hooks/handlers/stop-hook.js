@@ -93,7 +93,10 @@ async function main() {
     const isTicketSelected = !isWorker && responseText.includes('<promise>TICKET_SELECTED</promise>');
     const isTicketDone = !isWorker && responseText.includes('<promise>TICKET_COMPLETE</promise>');
     const isTaskDone = !isWorker && responseText.includes('<promise>TASK_COMPLETE</promise>');
-    if (hasPromise || isEpicDone || isTaskFinished || isWorkerDone) {
+    const isResearchComplete = responseText.includes('<promise>RESEARCH_COMPLETE</promise>');
+    const isValidationPassed = responseText.includes('<promise>VALIDATION_PASSED</promise>');
+    const isCouncilComplete = responseText.includes('<promise>COUNCIL_COMPLETE</promise>');
+    if (hasPromise || isEpicDone || isTaskFinished || isWorkerDone || isResearchComplete || isValidationPassed || isCouncilComplete) {
         if (!isWorker) {
             state.active = false;
             writeStateFile(stateFile, state);

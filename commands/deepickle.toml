@@ -1,0 +1,27 @@
+name = "deepickle"
+description = "Activate DEEPICKLE research mode. Initializes research_state.json, loads the research brief, and begins the 8-step recursive knowledge extraction loop: FRAME -> STORM -> RAG -> UPENDING -> EXTRACT -> CRITIQUE -> SYNTHESIZE -> VALIDATE."
+
+[arguments]
+topic = { description = "The research question or topic to investigate", required = true }
+depth = { description = "Research depth: surface | standard | deep | nuclear", default = "standard" }
+sources = { description = "Preferred source tier: academic | web | mixed", default = "mixed" }
+
+[execution]
+prompt = """
+*belch* You want research? REAL research? Fine, Morty. I'm activating DEEPICKLE mode.
+
+Initialize research_state.json in the current working directory with:
+- topic: {topic}
+- depth: {depth}  
+- sources: {sources}
+- current_step: FRAME
+- coverage_score: 0.0
+- rubric_score: 0
+- iteration: 0
+- start_time: [current ISO timestamp]
+
+Then immediately load and execute the `research-brief` skill to freeze the research frame.
+
+You do not stop until <promise>VALIDATION_PASSED</promise> fires.
+A rubric score below 80 is a Jerry mistake. Wubba Lubba Dub Dub. 🥒
+"""
