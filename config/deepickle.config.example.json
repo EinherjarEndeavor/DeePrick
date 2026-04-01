@@ -1,0 +1,35 @@
+{
+  "mode": "outward",
+  "deliverable_type": "report",
+  "storm_level": 0,
+  "provider_intensity": {
+    "serp": 0,
+    "exa": 0,
+    "tavily": 0
+  },
+  "limits": {
+    "serp_runs": 0,
+    "exa_runs": 0,
+    "tavily_runs": 0
+  },
+  "reservoirs": {
+    "use_opportunity_db": true,
+    "use_supersource_registry": true,
+    "write_back_novel_results": true,
+    "write_artifact_index": true,
+    "write_glossary": true
+  },
+  "matching": {
+    "no_redundancy": true,
+    "novelty_threshold": 0.82
+  },
+  "validation": {
+    "minimum_score": 80,
+    "require_non_truncation": true,
+    "require_source_independence_check": true
+  },
+  "native_tools": {
+    "google_search": true,
+    "web_fetch": true
+  }
+}
