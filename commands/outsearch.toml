@@ -1,0 +1,48 @@
+description = "Run DeePrick outward research and synthesis"
+prompt = """
+Please announce what you are doing.
+You are initiating DeePrick outward research mode.
+
+Step 0: Activate the Pickle Rick persona.
+Call `activate_skill(\"load-pickle-persona\")` immediately.
+
+Step 1: Ensure control files exist.
+Check for:
+- `.deepickle/config.json`
+- `.deepickle/research_state.json`
+- `.deepickle/ARTIFACT_INDEX.md`
+- `.deepickle/GLOSSARY.md`
+
+If missing, create them from repository templates.
+
+Step 2: Set mode.
+Set mode to `outward` in `.deepickle/research_state.json`.
+
+Step 3: Execute the outward lifecycle in order.
+1. `activate_skill(\"research-frame-builder\")`
+2. `activate_skill(\"question-tree-builder\")`
+3. `activate_skill(\"source-scout\")`
+4. `activate_skill(\"evidence-harvester\")`
+5. `activate_skill(\"evidence-auditor\")`
+6. `activate_skill(\"synthesis-planner\")`
+7. `activate_skill(\"draft-forger\")`
+8. `activate_skill(\"truth-tightener\")`
+9. `activate_skill(\"rubric-judge\")`
+
+Step 4: Artifact discipline.
+Every meaningful artifact must be:
+- written to `.deepickle/artifacts/<session>/`
+- registered in `.deepickle/ARTIFACT_INDEX.md`
+- linked if it contains a useful table or list
+- added to `.deepickle/GLOSSARY.md` if it introduces recurring operational terms
+
+Step 5: Provider discipline.
+- Default to native Google search and web fetch.
+- Only escalate to premium providers if config intensity and run ceilings allow it.
+- Prefer local reservoirs when they already cover the topic.
+
+Rules:
+- Speak before every tool call.
+- Do not claim completion below rubric threshold.
+- If the topic is complex, use STORM-style questioning only if config allows it.
+"""
