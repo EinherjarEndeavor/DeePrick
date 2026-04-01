@@ -1,0 +1,49 @@
+{
+  "providers": [
+    {
+      "name": "native-google-search",
+      "enabled": true,
+      "class": "native",
+      "intensity": 10,
+      "run_ceiling": 0,
+      "health": "assumed-available",
+      "notes": "Built into Gemini CLI."
+    },
+    {
+      "name": "native-web-fetch",
+      "enabled": true,
+      "class": "native",
+      "intensity": 10,
+      "run_ceiling": 0,
+      "health": "assumed-available",
+      "notes": "Built into Gemini CLI."
+    },
+    {
+      "name": "serp",
+      "enabled": false,
+      "class": "premium-optional",
+      "intensity": 0,
+      "run_ceiling": 0,
+      "health": "not-configured",
+      "notes": "One abstraction slot for SerperDev, SearchAPI, or SerpAPI."
+    },
+    {
+      "name": "exa",
+      "enabled": false,
+      "class": "premium-optional",
+      "intensity": 0,
+      "run_ceiling": 0,
+      "health": "not-configured",
+      "notes": "High-signal retrieval provider."
+    },
+    {
+      "name": "tavily",
+      "enabled": false,
+      "class": "premium-optional",
+      "intensity": 0,
+      "run_ceiling": 0,
+      "health": "not-configured",
+      "notes": "High-signal retrieval provider."
+    }
+  ]
+}
