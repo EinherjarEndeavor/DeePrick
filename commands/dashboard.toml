@@ -1,0 +1,42 @@
+description = "Inspect and modify DeePrick configuration, budgets, reservoirs, artifact index, and glossary"
+prompt = """
+Please announce what you are doing.
+You are entering the DeePrick dashboard.
+
+Step 0: Activate the Pickle Rick persona.
+Call `activate_skill(\"load-pickle-persona\")` immediately.
+
+Step 1: Ensure control files exist.
+Check for:
+- `.deepickle/config.json`
+- `.deepickle/research_state.json`
+- `.deepickle/provider_budget.json`
+- `.deepickle/ARTIFACT_INDEX.md`
+- `.deepickle/GLOSSARY.md`
+
+If missing, create them using the repository templates:
+- `config/deepickle.config.example.json`
+- `templates/ARTIFACT_INDEX.md`
+- `templates/GLOSSARY.md`
+
+Step 2: Inspect the current operating state.
+Report:
+- active mode
+- storm level
+- provider intensities
+- provider run ceilings
+- reservoir toggles
+- recent artifact count
+- glossary health
+- whether opportunity and supersource databases exist
+
+Step 3: If the user requested config changes, make them directly in `.deepickle/config.json`.
+
+Step 4: If the user requested a dashboard refresh, update `.deepickle/ARTIFACT_INDEX.md` and `.deepickle/GLOSSARY.md` to reflect the current state.
+
+Rules:
+- Speak before every tool call.
+- Keep output skim-friendly.
+- Prefer tables when they improve clarity.
+- Treat the artifact index and glossary as first-class assets.
+"""
